@@ -90,7 +90,7 @@ const Skills: React.FC = () => {
               className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-purple-500/50 transition-all duration-300"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.8 }}
+              transition={{ delay: index * 0.01, duration: 0.01 }}
               whileHover={{ scale: 1.02, y: -5 }}
               viewport={{ once: true }}
             >
@@ -136,7 +136,7 @@ const Skills: React.FC = () => {
               className="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-emerald-500/50 transition-all duration-300"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.1, duration: 0.8 }}
+              transition={{ delay: index * 0.01, duration: 0.01 }}
               whileHover={{ scale: 1.05, y: -5 }}
               viewport={{ once: true }}
             >

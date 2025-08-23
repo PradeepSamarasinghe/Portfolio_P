@@ -2,28 +2,44 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 
+// If the image is in src/assets/images/my.jpeg:
+import myPhoto from '../assets/images/my.jpeg'; // or '../assets/images/my.jpeg'
+// If you keep it in /public/assets/images/my.jpeg, remove the import and use src="/assets/images/my.jpeg" below.
+
 const Hero: React.FC = () => {
   const scrollToAbout = () => {
     const aboutSection = document.querySelector('#about');
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (aboutSection) aboutSection.scrollIntoView({ behavior: 'smooth' });
   };
+
+  // 👉 Edit avatar size here
+  const avatarSize = 'w-6 h-36 sm:w-44 sm:h-44 lg:w-56 lg:h-56';
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full filter blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full filter blur-3xl animate-pulse delay-1000" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
+        <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+          
+          {/* 👇 New: Profile Image */}
+          <div className="mb-8 flex justify-center">
+            <div className="p-[5px] rounded-full bg-gradient-to-tr from-purple-500 via-blue-500 to-emerald-400">
+              <img
+                // If using /public: src="/assets/images/my.jpeg"
+                src={myPhoto}
+                alt="Profile"
+                loading="lazy"
+                decoding="async"
+                className={`rounded-full object-cover ring-1 ring-white/10 shadow-xl ${avatarSize}`}
+              />
+            </div>
+          </div>
+
           <motion.h1
             className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6"
             initial={{ opacity: 0, y: 30 }}
@@ -49,7 +65,8 @@ const Hero: React.FC = () => {
             className="flex justify-center space-x-6 mb-12"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
+            // transition={{ delay: 0.6, duration: 0.8 }}
+            transition={{ delay: 0.01, duration: 0.01 }}
           >
             <motion.a
               href="#contact"
@@ -73,12 +90,12 @@ const Hero: React.FC = () => {
             className="flex justify-center space-x-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
+            transition={{ delay: 0.01, duration: 0.01 }}
           >
             {[
-              { Icon: Github, href: '#', label: 'GitHub' },
-              { Icon: Linkedin, href: '#', label: 'LinkedIn' },
-              { Icon: Mail, href: '#contact', label: 'Email' },
+              { Icon: Github, href: 'https://github.com/PradeepSamarasinghe', label: 'GitHub' },
+              { Icon: Linkedin, href: 'https://www.linkedin.com/in/pradeep-samarasinghe-4b66912a1/', label: 'LinkedIn' },
+              { Icon: Mail, href: 'mailto:samarasingjepradeep@gmail.com', label: 'Email' },
             ].map(({ Icon, href, label }) => (
               <motion.a
                 key={label}

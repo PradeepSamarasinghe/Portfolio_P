@@ -1,6 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, Eye } from 'lucide-react';
+import ks_agri from '../assets/images/KS.png'
+import candy_cloud from '../assets/images/CandyCloud.png'
+import task_mate from '../assets/images/taskmate.png';
+import portfolio from '../assets/images/porfolio.png';
+import cookie from '../assets/images/cookie.png';
 
 const Projects: React.FC = () => {
   const projects = [
@@ -8,7 +13,7 @@ const Projects: React.FC = () => {
       title: 'Candy Cloud',
       description: 'A full-stack e-commerce solution with React, Node.js, and MongoDB. Features include online shopping, secure payment integration, inventory management, delivery tracking, and customer feedback.',
       technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
-      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: candy_cloud,
       demoUrl: '#',
       githubUrl: 'https://github.com/ThanujaNethmina/CandyCloud',
     },
@@ -16,7 +21,7 @@ const Projects: React.FC = () => {
       title: 'Task Management App',
       description: 'A smart assistant built with React Native, Python, and AppWrite. Features include task and reminder management with voice/text input, scheduling optimization, and productivity tracking.',
       technologies: ['React Native', 'Python', 'AppWrite'],
-      image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: task_mate,
       demoUrl: '#',
       githubUrl: 'https://github.com/PradeepSamarasinghe/TaskMate',
     },
@@ -24,7 +29,7 @@ const Projects: React.FC = () => {
       title: 'KS Agri',
       description: 'A full-stack export management platform built with the MERN stack. Features include product catalog and product management dashboard.',
       technologies: ['React.js', 'Three.js', 'TypeScript', 'Tailwind CSS'],
-      image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: ks_agri,
       demoUrl: '#',
       githubUrl: 'https://github.com/PradeepSamarasinghe/KS-AGRI',
     },
@@ -32,7 +37,7 @@ const Projects: React.FC = () => {
       title: 'CookieVerse',
       description: 'Built with Spring Boot (Java) on the backend and React + Vite on the frontend this platform offers an engaging interactive experience to explore recipes, cooking techniques and community inspiration.',
       technologies: ['React.js', 'Vite', 'Tailwind CSS', 'Spring Boot','MongoDB'],
-      image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: cookie,
       demoUrl: '#',
       githubUrl: 'https://github.com/Sarith-Samarakoon/CookieVerse',
     },
@@ -40,7 +45,7 @@ const Projects: React.FC = () => {
       title: 'My Portfolio',
       description: 'A modern personal portfolio website showcasing my projects, skills, certifications, and blog, with a clean responsive design and engaging user experience.',
       technologies: ['React.js', 'Tailwind CSS', 'JavaScript', 'Framer Motion'],
-      image: 'https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: portfolio,
       demoUrl: '#',
       githubUrl: 'https://github.com/PradeepSamarasinghe/Portfolio_P',
     },
@@ -80,7 +85,7 @@ const Projects: React.FC = () => {
               className="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-purple-500/50 transition-all duration-300"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.8 }}
+              transition={{ delay: index * 0.01, duration: 0.2 }}
               whileHover={{ scale: 1.02, y: -5 }}
               viewport={{ once: true }}
             >
